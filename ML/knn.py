@@ -7,7 +7,9 @@ def euclid_distance(p1, p2):
 # -----------------------
 
 # --- NORMALIZE DATA ---
-def tranform_value(val, min_val, max_val):
+def transform_value(val, min_val, max_val):
+    if max_val == min_val:
+        return 0
     return (val - min_val)/(max_val - min_val)
 
 def normalize(df):
@@ -19,15 +21,15 @@ def normalize(df):
         sex = row['Sex']
 
         age = row['Age']
-        age = tranform_value(age, min_age, max_age)
+        age = transform_value(age, min_age, max_age)
 
         st_depress = row['ST depression']
 
         bp = row['BP']
-        bp = tranform_value(bp, min_bp, max_bp)
+        bp = transform_value(bp, min_bp, max_bp)
 
         cholesterol = row['Cholesterol']
-        cholesterol = tranform_value(cholesterol, min_cholesterol, max_cholesterol)
+        cholesterol = transform_value(cholesterol, min_cholesterol, max_cholesterol)
 
         X.append([age, sex, bp, cholesterol, st_depress])
         y.append(row['Heart Disease'])
@@ -56,6 +58,7 @@ class KNN:
         for i in range(n):
             distance = euclid_distance(self.X[i], p)
             results.append([distance, self.y[i]])
+
         results.sort(key=lambda x: x[0])
 
         yes, no = 0, 0

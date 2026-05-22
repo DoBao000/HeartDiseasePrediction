@@ -88,9 +88,6 @@ python test/test.py
 
 ## Future Improvements
 
-- Add Flask/FastAPI backend
-- Deploy model to cloud
-- Add frontend dashboard
 - Improve model accuracy
 - Add more ML algorithms
 - Docker support
