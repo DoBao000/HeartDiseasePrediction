@@ -70,10 +70,9 @@ class KNN:
 # -----------
 
 # --- IMPLEMENT ---
-knn = KNN(7)
-knn.fit(X_train, y_train)
-
-test_patient = [0.5, 0, 0.6, 0.4, 0.6]  # [age_norm, sex, bp_norm, chol_norm, stdepress_norm]
-result = knn.predict(test_patient)
-print(result)
+def implement(norms=[0, 0, 0, 0, 0], k=3):
+    knn = KNN(k)
+    knn.fit(X_train, y_train)
+    result = knn.predict(norms)
+    return result
 # -----------------
