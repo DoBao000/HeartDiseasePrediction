@@ -50,7 +50,7 @@ class KNN:
         self.X = X
         self.y = y
 
-    def test(self, p):
+    def predict(self, p):
         results = []
         n = len(self.X)
         for i in range(n):
@@ -73,7 +73,7 @@ class KNN:
 knn = KNN(7)
 knn.fit(X_train, y_train)
 
-test_patient = [0.8, 0, 0.9, 0.6, 0.1]  # [age_norm, sex, bp_norm, chol_norm, stdepress_norm]
-result = knn.test(test_patient)
+test_patient = [0.5, 0, 0.6, 0.4, 0.6]  # [age_norm, sex, bp_norm, chol_norm, stdepress_norm]
+result = knn.predict(test_patient)
 print(result)
 # -----------------
