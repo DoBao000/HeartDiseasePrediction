@@ -1,0 +1,15 @@
+id
+Age
+Sex
+Chest pain type
+BP (blood pressure)
+Cholesterol
+FBS over 120
+EKG results
+Max HR
+Exercise angina
+ST depression
+Slope of ST
+Number of vessels fluro
+Thallium
+Heart Disease (Presence, Absence)
